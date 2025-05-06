@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+/* import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
 
 interface PayloadCMSBody {
@@ -58,3 +58,4 @@ export async function POST(req: NextRequest) {
 		)
 	}
 }
+ */

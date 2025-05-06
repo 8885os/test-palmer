@@ -117,11 +117,7 @@ export const Navbar = ({ ...data }: HeaderType) => {
 							!isClosing
 								? 'animate-[var(--slide-left)]'
 								: 'animate-[var(--slide-right)]'
-						}`}>
-						<Link href='/'>Home</Link>
-						<Link href='/work'>Work</Link>
-						<Link href='/contact'>Contact</Link>
-					</div>
+						}`}></div>
 				)}
 			</div>
 		</div>
