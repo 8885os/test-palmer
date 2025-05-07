@@ -1,12 +1,12 @@
-import { notFound } from 'next/navigation'
+//import { notFound } from 'next/navigation'
 import React from 'react'
-import { draftMode } from 'next/headers'
-import ImageHero from '@/components/ImageHero'
-import ImageGrid from '@/components/ImageGrid'
-import { PAGE_QUERY } from '@/lib/utils/queries'
-import { Richtext } from '@/components/Richtext'
+//import { draftMode } from 'next/headers'
+//import ImageHero from '@/components/ImageHero'
+//import ImageGrid from '@/components/ImageGrid'
+//import { PAGE_QUERY } from '@/lib/utils/queries'
+//import { Richtext } from '@/components/Richtext'
 
-interface GraphQLResponse {
+/* interface GraphQLResponse {
 	Pages: {
 		docs: {
 			slug: string
@@ -16,10 +16,10 @@ interface GraphQLResponse {
 			content: any[]
 		}[]
 	}
-}
+} */
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function renderBlock(block: any, index: number) {
+/* function renderBlock(block: any, index: number) {
 	switch (block.__typename) {
 		case 'Hero':
 			return (
@@ -36,12 +36,10 @@ function renderBlock(block: any, index: number) {
 		case 'RichText':
 			return (
 				<section key={`${block.__typename}-${index}`} className='w-full'>
-					<div className='ml-auto w-[60%] mt-10 mb-10'>
-						<Richtext
-							data={block.content}
-							internalDocToHref={block.internalDocToHref}
-						/>
-					</div>
+					<Richtext
+						data={block.content}
+						internalDocToHref={block.internalDocToHref}
+					/>
 				</section>
 			)
 
@@ -55,7 +53,7 @@ function renderBlock(block: any, index: number) {
 		default:
 			return null
 	}
-}
+} */
 
 export default async function CMSPage({
 	params: paramsPromise,
@@ -63,10 +61,10 @@ export default async function CMSPage({
 	params: Promise<{ slug: string }>
 }) {
 	const { slug } = await paramsPromise
-	const { isEnabled } = await draftMode()
+	//const { isEnabled } = await draftMode()
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	let content: any[] | undefined
+	/* let content: any[] | undefined
 
 	try {
 		const response = await fetch(
@@ -103,7 +101,12 @@ export default async function CMSPage({
 
 	if (!content) {
 		return notFound()
-	}
+	} */
 
-	return <div>{content.map((block, index) => renderBlock(block, index))}</div>
+	return (
+		<div>
+			{/* {content.map((block, index) => renderBlock(block, index))} */}
+			<h1>{slug}</h1>
+		</div>
+	)
 }
